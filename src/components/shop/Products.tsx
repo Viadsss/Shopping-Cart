@@ -22,7 +22,7 @@ const Products: React.FC<Props> = ({ category, searchValue }) => {
     switch (sortBy) {
       case "asc":
         return currentProdcuts.sort((a, b) => a.title.localeCompare(b.title));
-      case "dsec":
+      case "desc":
         return currentProdcuts.sort((a, b) => b.title.localeCompare(a.title));
       case "lowest":
         return currentProdcuts.sort((a, b) => a.price - b.price);
