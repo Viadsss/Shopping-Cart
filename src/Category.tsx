@@ -18,10 +18,10 @@ const Category: React.FC<Props> = ({ category }) => {
       )}
       <ul>
         <li>
-          <Link to="/shop/electronics">electronics</Link>
+          <Link to="/shop/electronics">Electronics</Link>
         </li>
         <li>
-          <Link to="/shop/jewelery">jewelery</Link>
+          <Link to="/shop/jewelery">Jewelery</Link>
         </li>
         <li>
           <Link to="/shop/mens_clothing">Men's Clothing</Link>

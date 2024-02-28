@@ -1,7 +1,7 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { useState } from "react";
 import { IProduct } from "./utils/types";
-import Home from "./Home";
+import App from "./App";
 import Shop from "./Shop";
 import Product from "./Product";
 import Cart from "./Cart";
@@ -51,7 +51,7 @@ const Router = () => {
     {
       path: "/",
       element: (
-        <Home
+        <App
           inputValue={inputValue}
           setInputValue={setInputValue}
           setSearchValue={setSearchValue}
