@@ -1,6 +1,6 @@
 import { Outlet, useOutlet } from "react-router-dom";
-import { IProduct } from "./utils/types";
-import Hero from "./Hero";
+import { IProduct } from "../../utils/types";
+import Hero from "../home/Hero";
 import Header from "./Header";
 import Footer from "./Footer";
 

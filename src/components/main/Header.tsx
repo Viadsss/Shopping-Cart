@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { IconSearch, IconShoppingCart } from "@tabler/icons-react";
-import { IProduct } from "./utils/types";
+import { IProduct } from "../../utils/types";
 
 interface Props {
   inputValue: string;

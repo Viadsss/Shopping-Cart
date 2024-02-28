@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
-import Category from "./Category";
-import Products from "./Products";
+import Category from "./components/shop/Category";
+import Products from "./components/shop/Products";
 
 interface Props {
   searchValue: string;

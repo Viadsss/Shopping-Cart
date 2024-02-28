@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import useProducts from "../utils/useProducts";
-import { IProduct } from "../utils/types";
+import useProducts from "../../../utils/useProducts";
+import { IProduct } from "../../../utils/types";
 
 interface Props {
   sortBy: string;

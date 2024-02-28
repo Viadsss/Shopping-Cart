@@ -1,10 +1,10 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { useState } from "react";
 import { IProduct } from "./utils/types";
-import App from "./App";
+import App from "./components/main/App";
 import Shop from "./Shop";
-import Product from "./Product";
-import Cart from "./Cart";
+import Product from "./components/product/Product";
+import Cart from "./components/cart/Cart";
 
 const Router = () => {
   const [cartItems, setCartItems] = useState<IProduct[]>([]);

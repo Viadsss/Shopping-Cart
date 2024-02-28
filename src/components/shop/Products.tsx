@@ -1,12 +1,12 @@
-import AllProducts from "./products/AllProducts";
-import Electronics from "./products/Electronics";
-import ErrorCategory from "./products/ErrorCategory";
-import Jewelery from "./products/Jewelery";
-import MensClothing from "./products/MensClothing";
-import WomensClothing from "./products/WomensClothing";
-import SearchProducts from "./products/SearchProducts";
+import AllProducts from "./categories/AllProducts";
+import Electronics from "./categories/Electronics";
+import ErrorCategory from "./categories/ErrorCategory";
+import Jewelery from "./categories/Jewelery";
+import MensClothing from "./categories/MensClothing";
+import WomensClothing from "./categories/WomensClothing";
+import SearchProducts from "./categories/SearchProducts";
 import { useState } from "react";
-import { IProduct } from "./utils/types";
+import { IProduct } from "../../utils/types";
 
 interface Props {
   category: string | undefined;
@@ -15,7 +15,6 @@ interface Props {
 
 const Products: React.FC<Props> = ({ category, searchValue }) => {
   const [sortBy, setSortBy] = useState("default");
-
 
   const sortProduct = (sortBy: string, products: IProduct[]) => {
     const currentProdcuts = [...products];

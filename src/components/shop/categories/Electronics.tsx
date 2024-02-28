@@ -1,16 +1,16 @@
 import { Link } from "react-router-dom";
-import useProducts from "../utils/useProducts";
-import { IProduct } from "../utils/types";
+import useProducts from "../../../utils/useProducts";
+import { IProduct } from "../../../utils/types";
 
 interface Props {
   sortBy: string;
   sortProduct: (sortBy: string, products: IProduct[]) => IProduct[];
 }
 
-const Jewelery: React.FC<Props> = ({ sortBy, sortProduct }) => {
-  const { products, error, loading } = useProducts("jewelery");
+const Electronics: React.FC<Props> = ({ sortBy, sortProduct }) => {
+  const { products, error, loading } = useProducts("electronics");
 
-  if (error) return <p>Error in fetching Jewelery products</p>;
+  if (error) return <p>Error in fetching Electronic products</p>;
   if (loading) return <p>Loading...</p>;
 
   const sortedProducts = sortProduct(sortBy, products);
@@ -34,4 +34,4 @@ const Jewelery: React.FC<Props> = ({ sortBy, sortProduct }) => {
   );
 };
 
-export default Jewelery;
+export default Electronics;

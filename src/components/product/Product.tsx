@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { IProduct } from "./utils/types";
+import { IProduct } from "../../utils/types";
 
 interface Props {
   addToCart: (product: IProduct) => void;
