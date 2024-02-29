@@ -40,7 +40,7 @@ const Footer = () => {
         </div>
         <div className="flex gap-x-32">
           <div>
-            <div className="font-satoshiBold mb-4 text-xl uppercase text-white">
+            <div className="mb-4 font-satoshiBold text-xl uppercase text-white">
               Shop
             </div>
             <ul className="flex flex-col gap-y-4 text-gray-400">
@@ -59,7 +59,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className="">
-            <div className="font-satoshiBold mb-4 text-xl uppercase text-white">
+            <div className="mb-4 font-satoshiBold text-xl uppercase text-white">
               Useful Links
             </div>
             <ul className="flex flex-col gap-y-4 text-gray-400">

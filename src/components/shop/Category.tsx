@@ -8,14 +8,12 @@ interface Props {
 const Category: React.FC<Props> = ({ category }) => {
   const navigate = useNavigate();
 
-  console.log(category);
-
   const clearCategory = () => {
     navigate("/shop");
   };
 
   return (
-    <div className="w-52 border-r border-gray-200 px-2 py-8 pr-4 leading-5">
+    <div className="w-60 border-r border-gray-200 px-2 py-8 pr-4 leading-5">
       <div className="sticky top-20">
         <div className="mb-4 font-satoshiBold text-xl">Categories</div>
         {category && category !== "search" && (

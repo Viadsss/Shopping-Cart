@@ -1,6 +1,5 @@
-import { Outlet, useOutlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { IProduct } from "../../utils/types";
-import Hero from "../home/Hero";
 import Header from "./Header";
 import Footer from "./Footer";
 
@@ -17,10 +16,8 @@ const App: React.FC<Props> = ({
   setSearchValue,
   cartItems,
 }) => {
-  const hasOutlet = useOutlet();
-
   return (
-    <div className="font-satoshi flex min-h-screen flex-col items-center">
+    <div className="flex min-h-screen flex-col items-center font-satoshi">
       <div className="h-2 w-full bg-black"></div>
       <Header
         inputValue={inputValue}
@@ -29,7 +26,7 @@ const App: React.FC<Props> = ({
         cartItems={cartItems}
       />
       <div className="w-full max-w-screen-2xl">
-        {!hasOutlet ? <Hero /> : <Outlet />}
+        <Outlet />
       </div>
       <Footer />
     </div>

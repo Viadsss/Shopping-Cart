@@ -5,6 +5,8 @@ import App from "./components/main/App";
 import Shop from "./components/shop/Shop";
 import Product from "./components/product/Product";
 import Cart from "./components/cart/Cart";
+import ErrorPage from "./components/main/ErrorPage";
+import Hero from "./components/home/Hero";
 
 const Router = () => {
   const [cartItems, setCartItems] = useState<IProduct[]>([]);
@@ -50,6 +52,7 @@ const Router = () => {
   const router = createBrowserRouter([
     {
       path: "/",
+      errorElement: <ErrorPage cartItems={cartItems} />,
       element: (
         <App
           inputValue={inputValue}
@@ -59,6 +62,7 @@ const Router = () => {
         />
       ),
       children: [
+        { index: true, element: <Hero /> },
         { path: "shop", element: <Shop searchValue={searchValue} /> },
         { path: "shop/:category", element: <Shop searchValue={searchValue} /> },
         {
