@@ -34,7 +34,7 @@ const Products: React.FC<Props> = ({ category, searchValue }) => {
   };
 
   return (
-    <>
+    <div className="px-4">
       <label>
         Sort by:
         <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
@@ -64,7 +64,7 @@ const Products: React.FC<Props> = ({ category, searchValue }) => {
       ) : (
         <ErrorCategory />
       )}
-    </>
+    </div>
   );
 };
 

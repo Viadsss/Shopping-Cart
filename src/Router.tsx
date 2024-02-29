@@ -2,7 +2,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { useState } from "react";
 import { IProduct } from "./utils/types";
 import App from "./components/main/App";
-import Shop from "./Shop";
+import Shop from "./components/shop/Shop";
 import Product from "./components/product/Product";
 import Cart from "./components/cart/Cart";
 
