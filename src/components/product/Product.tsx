@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { IProduct } from "../../utils/types";
+import { IconShoppingCartPlus, IconStarFilled } from "@tabler/icons-react";
+import hasDecimal from "../../utils/hasDecimal";
 
 interface Props {
   addToCart: (product: IProduct) => void;
@@ -34,9 +36,41 @@ const Product: React.FC<Props> = ({ addToCart }) => {
   if (loading) return <p>Loading...</p>;
 
   return (
-    <div>
-      <div>{product && product.title}</div>
-      <button onClick={() => addToCart(product)}>Add to Cart</button>
+    <div className="h-full min-h-screen bg-gray-100 px-24 py-8">
+      <div className="grid grid-cols-2 rounded-lg bg-white p-4 shadow-xl">
+        <div className="flex items-center justify-center">
+          <img className="h-64 w-full object-contain" src={product.image} />
+        </div>
+        <div className="flex flex-col p-2">
+          <div className="mb-2 font-satoshiBold text-4xl font-bold">
+            {product.title}
+          </div>
+          <div className="mb-2 flex items-center gap-x-2">
+            <IconStarFilled className="text-yellow-400" />
+            <span className="ml-1 text-lg">{product.rating.rate} </span>
+            <span className="text-sm text-slate-400">
+              ({product.rating.count} reviews)
+            </span>
+          </div>
+          <div className="m-2 font-satoshiBold text-2xl">
+            $
+            {hasDecimal(product.price)
+              ? product.price.toFixed(2)
+              : product.price}
+          </div>
+          <div className="mb-5 border-b-2 pb-2 text-gray-500">
+            {product.description}
+          </div>
+
+          <button
+            className="flex w-3/4 items-center justify-center gap-x-2 self-center rounded-full bg-black py-3 text-white"
+            onClick={() => addToCart(product)}
+          >
+            <IconShoppingCartPlus />
+            <div>Add to Cart</div>
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
