@@ -29,22 +29,30 @@ const Category: React.FC<Props> = ({ category }) => {
           <li
             className={`mb-1 rounded px-2 ${category === "electronics" ? "bg-gray-800 py-3 text-white" : "py-2 hover:bg-gray-200 hover:text-gray-800"}`}
           >
-            <Link to="/shop/electronics">Electronics</Link>
+            <Link to="/shop/electronics" className="block">
+              Electronics
+            </Link>
           </li>
           <li
             className={`mb-1 rounded px-2 ${category === "jewelery" ? "bg-gray-800 py-3 text-white" : "py-2 hover:bg-gray-200 hover:text-gray-800"}`}
           >
-            <Link to="/shop/jewelery">Jewelery</Link>
+            <Link to="/shop/jewelery" className="block">
+              Jewelery
+            </Link>
           </li>
           <li
             className={`mb-1 rounded px-2 ${category === "mens_clothing" ? "bg-gray-800 py-3 text-white" : "py-2 hover:bg-gray-200 hover:text-gray-800"}`}
           >
-            <Link to="/shop/mens_clothing">Men's Clothing</Link>
+            <Link to="/shop/mens_clothing" className="block">
+              Men's Clothing
+            </Link>
           </li>
           <li
             className={`mb-1 rounded px-2 ${category === "womens_clothing" ? "bg-gray-800 py-3 text-white" : "py-2 hover:bg-gray-200 hover:text-gray-800"}`}
           >
-            <Link to="/shop/womens_clothing">Women's Clothing</Link>
+            <Link to="/shop/womens_clothing" className="block">
+              Women's Clothing
+            </Link>
           </li>
         </ul>
       </div>
