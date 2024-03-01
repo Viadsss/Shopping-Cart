@@ -6,6 +6,7 @@ import {
 } from "@tabler/icons-react";
 import hasDecimal from "../../utils/hasDecimal";
 import { IProduct } from "../../utils/types";
+import EmptyDisplay from "./EmptyDisplay";
 
 interface Props {
   cartItems: IProduct[];
@@ -24,17 +25,10 @@ const Cart: React.FC<Props> = ({
     .reduce((total, item) => total + item.price * item.quantity, 0)
     .toFixed(2);
 
-  if (cartItems.length === 0)
-    return (
-      <div className="h-full min-h-screen  px-24 py-8 outline outline-red-200">
-        <div className="flex justify-center font-satoshiBold text-4xl">
-          No items have been added to your cart yet 🛒
-        </div>
-      </div>
-    );
+  if (cartItems.length === 0) return <EmptyDisplay />;
 
   return (
-    <div className="h-full min-h-screen  px-24 py-8 outline outline-red-200">
+    <div className="h-full min-h-screen  px-24 py-8">
       <div className="my-4 font-integral text-4xl uppercase tracking-wider">
         Your Cart
       </div>
