@@ -2,6 +2,8 @@ import { Outlet } from "react-router-dom";
 import { IProduct } from "../../utils/types";
 import Header from "./Header";
 import Footer from "./Footer";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 interface Props {
   inputValue: string;
@@ -18,6 +20,7 @@ const App: React.FC<Props> = ({
 }) => {
   return (
     <div className="flex min-h-screen flex-col items-center font-satoshi">
+      <ToastContainer autoClose={1250} />
       <div className="h-2 w-full bg-black"></div>
       <Header
         inputValue={inputValue}

@@ -7,6 +7,7 @@ import {
 import hasDecimal from "../../utils/hasDecimal";
 import { IProduct } from "../../utils/types";
 import EmptyDisplay from "./EmptyDisplay";
+import { toast } from "react-toastify";
 
 interface Props {
   cartItems: IProduct[];
@@ -26,6 +27,18 @@ const Cart: React.FC<Props> = ({
     .toFixed(2);
 
   if (cartItems.length === 0) return <EmptyDisplay />;
+
+  const notifyRemove = () => toast("Item removed from cart");
+  const notifyCheckout = () => toast("Checking out the products");
+
+  const handleRemoveCartItem = (itemId: number) => {
+    removeCartItem(itemId);
+    notifyRemove();
+  };
+
+  const handleCheckOut = () => {
+    notifyCheckout();
+  };
 
   return (
     <div className="h-full min-h-screen  px-24 py-8">
@@ -55,7 +68,7 @@ const Cart: React.FC<Props> = ({
                 </div>
               </div>
               <div className="flex flex-col items-end">
-                <button onClick={() => removeCartItem(item.id)}>
+                <button onClick={() => handleRemoveCartItem(item.id)}>
                   <IconTrashXFilled className="text-red-500" />
                 </button>
                 <div className="mt-auto flex items-center justify-between rounded-full bg-gray-100 px-2 py-2 font-satoshiBold">
@@ -93,7 +106,10 @@ const Cart: React.FC<Props> = ({
               <div>Total</div>
               <div className="font-satoshiBold text-lg">${subTotal}</div>
             </div>
-            <button className="mt-4 flex  w-3/4  items-center justify-center gap-x-2 self-center rounded-full bg-black py-3 text-white">
+            <button
+              className="mt-4 flex  w-3/4  items-center justify-center gap-x-2 self-center rounded-full bg-black py-3 text-white"
+              onClick={() => handleCheckOut()}
+            >
               Go to Checkout
               <IconArrowBigRightLines />
             </button>
@@ -101,24 +117,6 @@ const Cart: React.FC<Props> = ({
         </div>
       </div>
     </div>
-    // <div>
-    //   <h2>Cart</h2>
-    //   {cartItems.map((item) => (
-    //     <div key={item.id}>
-    //       <div>
-    //         {item.title}
-    //         <span> - Quantity: {item.quantity}</span>
-    //       </div>
-    //       <div>Price: ${(item.price * item.quantity).toFixed(2)}</div>
-    //       <div>
-    //         <button onClick={() => increaseQuantity(item.id)}>+</button>
-    //         <button onClick={() => decreaseQuantity(item.id)}>-</button>
-    //         <button onClick={() => removeCartItem(item.id)}>Remove</button>
-    //       </div>
-    //     </div>
-    //   ))}
-    //   <div>Subtotal: ${subTotal}</div>
-    // </div>
   );
 };
 

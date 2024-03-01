@@ -5,6 +5,7 @@ import { IconShoppingCartPlus, IconStarFilled } from "@tabler/icons-react";
 import hasDecimal from "../../utils/hasDecimal";
 import LoadingCategory from "../shop/categories/LoadingCategory";
 import ErrorProduct from "./ErrorProduct";
+import { toast } from "react-toastify";
 
 interface Props {
   addToCart: (product: IProduct) => void;
@@ -33,6 +34,13 @@ const Product: React.FC<Props> = ({ addToCart }) => {
 
     fetchProduct();
   }, [id]);
+
+  const notify = () => toast.success("Added to cart successfully");
+
+  const handleAddToCart = (product: IProduct) => {
+    addToCart(product);
+    notify();
+  };
 
   if (error) return <ErrorProduct />;
   if (loading) return <LoadingCategory />;
@@ -66,7 +74,7 @@ const Product: React.FC<Props> = ({ addToCart }) => {
 
           <button
             className="flex w-3/4 items-center justify-center gap-x-2 self-center rounded-full bg-black py-3 text-white"
-            onClick={() => addToCart(product)}
+            onClick={() => handleAddToCart(product)}
           >
             <IconShoppingCartPlus />
             <div>Add to Cart</div>
