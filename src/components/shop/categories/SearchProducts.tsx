@@ -5,7 +5,6 @@ import hasDecimal from "../../../utils/hasDecimal";
 import { IconStarFilled } from "@tabler/icons-react";
 import LoadingCategory from "./LoadingCategory";
 
-
 interface Props {
   sortBy: string;
   sortProduct: (sortBy: string, products: IProduct[]) => IProduct[];
@@ -21,7 +20,6 @@ const SearchProducts: React.FC<Props> = ({
 
   if (error) return <p>Error in fetching all of the products</p>;
   if (loading) return <LoadingCategory />;
-
 
   const filterProduct = (products: IProduct[], input: string) => {
     const filteredProduct = products.filter((product) =>

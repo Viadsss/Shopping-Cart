@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import { IProduct } from "../../utils/types";
 import { IconShoppingCartPlus, IconStarFilled } from "@tabler/icons-react";
 import hasDecimal from "../../utils/hasDecimal";
+import LoadingCategory from "../shop/categories/LoadingCategory";
+import ErrorProduct from "./ErrorProduct";
 
 interface Props {
   addToCart: (product: IProduct) => void;
@@ -32,8 +34,8 @@ const Product: React.FC<Props> = ({ addToCart }) => {
     fetchProduct();
   }, [id]);
 
-  if (error) return <p>Error in fetching this product</p>;
-  if (loading) return <p>Loading...</p>;
+  if (error) return <ErrorProduct />;
+  if (loading) return <LoadingCategory />;
 
   return (
     <div className="h-full min-h-screen bg-gray-100 px-24 py-8">

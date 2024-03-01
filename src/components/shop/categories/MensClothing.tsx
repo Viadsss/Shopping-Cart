@@ -16,7 +16,6 @@ const MensClothing: React.FC<Props> = ({ sortBy, sortProduct }) => {
   if (error) return <p>Error in fetching Men's Clothing products</p>;
   if (loading) return <LoadingCategory />;
 
-
   const sortedProducts = sortProduct(sortBy, products);
 
   return (
