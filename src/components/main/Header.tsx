@@ -57,9 +57,19 @@ const Header: React.FC<Props> = ({
         <Link to="/">Home</Link>
         <Link to="/shop">Shop</Link>
         <Link to="/cart">
-          <div className="flex items-center gap-x-1">
-            <span>{cartItems.length ? cartItems.length : null}</span>
-            <IconShoppingCart />
+          <div className="relative flex items-center gap-x-1">
+            {cartItems.length ? cartItems.length : null}
+            <div>
+              <IconShoppingCart />
+            </div>
+            <div className="absolute -right-1/4 -top-1/4 flex items-center text-sm">
+              {cartItems.length ? (
+                <div className="relative flex items-center">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75"></span>
+                  <span className="relative inline-flex h-3 w-3 rounded-full bg-sky-500"></span>
+                </div>
+              ) : null}
+            </div>
           </div>
         </Link>
       </div>
