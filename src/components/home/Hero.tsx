@@ -8,7 +8,7 @@ const Hero = () => {
     <div className="flex flex-col items-center bg-[#F2F0F1] px-4 pt-8 lg:flex-row lg:px-16">
       <div className="basis-7/12 self-center">
         <h2 className="text-balance text-center font-integral text-4xl tracking-wide md:text-5xl lg:text-left lg:text-6xl">
-          Find Prodcuts That Matches Your Style
+          Find Products That Matches Your Style
         </h2>
         <p className="mb-6 mt-10 text-center opacity-70 lg:text-left">
           Browse through our diverse range of meticulously crafted garments,
