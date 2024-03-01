@@ -6,7 +6,7 @@ The **Shopping Cart** project is created according to the assignment from **The 
 
 ![Preview](public/imgs/Shopping_Cart_Preview.png)
 
-<!-- ### 🔗 **Live preview** of the project is [here](https://viads-memory-game.netlify.app/). -->
+### 🔗 **Live preview** of the project is [here](https://viads-shopping-cart.netlify.app/).
 
 ## 💡 **Things I've learned**
 
