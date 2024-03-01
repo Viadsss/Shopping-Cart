@@ -35,7 +35,7 @@ const Products: React.FC<Props> = ({ category, searchValue }) => {
 
   return (
     <div className="w-full py-8 pl-4">
-      <label className="flex items-center justify-end gap-x-2">
+      <label className="mb-2 flex items-center justify-end gap-x-2">
         <span className="text-sm">Sort by</span>
         <select
           className="cursor-pointer rounded border border-slate-300 bg-slate-50 px-2 py-1 transition hover:border-slate-400"

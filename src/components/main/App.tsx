@@ -4,6 +4,8 @@ import Header from "./Header";
 import Footer from "./Footer";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useState } from "react";
+import Navigation from "./Navigation";
 
 interface Props {
   inputValue: string;
@@ -18,8 +20,18 @@ const App: React.FC<Props> = ({
   setSearchValue,
   cartItems,
 }) => {
+  const [isNavOpen, setIsNavOpen] = useState(false);
+
   return (
-    <div className="flex min-h-screen flex-col items-center font-satoshi">
+    <div className="relative flex min-h-screen flex-col items-center font-satoshi">
+      {isNavOpen && (
+        <Navigation
+          inputValue={inputValue}
+          setInputValue={setInputValue}
+          setSearchValue={setSearchValue}
+          setIsNavOpen={setIsNavOpen}
+        />
+      )}
       <ToastContainer autoClose={1250} />
       <div className="h-2 w-full bg-black"></div>
       <Header
@@ -27,6 +39,7 @@ const App: React.FC<Props> = ({
         setInputValue={setInputValue}
         setSearchValue={setSearchValue}
         cartItems={cartItems}
+        setIsNavOpen={setIsNavOpen}
       />
       <div className="w-full max-w-screen-2xl">
         <Outlet />

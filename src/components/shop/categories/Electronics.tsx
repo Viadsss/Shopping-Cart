@@ -21,7 +21,7 @@ const Electronics: React.FC<Props> = ({ sortBy, sortProduct }) => {
   return (
     <div className="mb-32">
       <div className="mb-2 font-bold">{sortedProducts.length} items</div>
-      <div className="grid grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {sortedProducts.map((product) => (
           <Link
             className="flex flex-col gap-y-2 rounded-lg p-3 hover:shadow-xl"

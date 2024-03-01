@@ -3,9 +3,9 @@ import { useParams } from "react-router-dom";
 import { IProduct } from "../../utils/types";
 import { IconShoppingCartPlus, IconStarFilled } from "@tabler/icons-react";
 import hasDecimal from "../../utils/hasDecimal";
-import LoadingCategory from "../shop/categories/LoadingCategory";
 import ErrorProduct from "./ErrorProduct";
 import { toast } from "react-toastify";
+import LoadingProduct from "./LoadingProduct";
 
 interface Props {
   addToCart: (product: IProduct) => void;
@@ -43,16 +43,19 @@ const Product: React.FC<Props> = ({ addToCart }) => {
   };
 
   if (error) return <ErrorProduct />;
-  if (loading) return <LoadingCategory />;
+  if (loading) return <LoadingProduct />;
 
   return (
-    <div className="h-full min-h-screen bg-gray-100 px-24 py-8">
-      <div className="grid grid-cols-2 rounded-lg bg-white p-4 shadow-xl">
+    <div className="h-full min-h-screen px-8 py-8 md:px-24">
+      <div className="grid rounded-lg p-2 shadow-xl md:p-4 lg:grid-cols-2">
         <div className="flex items-center justify-center">
-          <img className="h-64 w-full object-contain" src={product.image} />
+          <img
+            className="h-32 w-full object-contain md:h-64"
+            src={product.image}
+          />
         </div>
         <div className="flex flex-col p-2">
-          <div className="mb-2 font-satoshiBold text-4xl font-bold">
+          <div className="mb-2 font-satoshiBold text-2xl font-bold md:text-4xl">
             {product.title}
           </div>
           <div className="mb-2 flex items-center gap-x-2">
@@ -62,13 +65,13 @@ const Product: React.FC<Props> = ({ addToCart }) => {
               ({product.rating.count} reviews)
             </span>
           </div>
-          <div className="m-2 font-satoshiBold text-2xl">
+          <div className="m-2 font-satoshiBold text-xl md:text-2xl">
             $
             {hasDecimal(product.price)
               ? product.price.toFixed(2)
               : product.price}
           </div>
-          <div className="mb-5 border-b-2 pb-2 text-gray-500">
+          <div className="mb-5 border-b-2 pb-2 text-sm text-gray-500 md:text-base">
             {product.description}
           </div>
 

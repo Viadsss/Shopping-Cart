@@ -41,14 +41,17 @@ const Cart: React.FC<Props> = ({
   };
 
   return (
-    <div className="h-full min-h-screen  px-24 py-8">
+    <div className="h-full min-h-screen px-8 py-8 md:px-24">
       <div className="my-4 font-integral text-4xl uppercase tracking-wider">
         Your Cart
       </div>
-      <div className="grid grid-cols-3 gap-x-4 rounded-lg p-4">
-        <div className="col-span-2 flex flex-col divide-y-2 rounded-lg border-2 border-slate-100 p-2">
+      <div className="grid grid-rows-2 gap-4 rounded-lg p-4 lg:grid-cols-3">
+        <div className="flex flex-col divide-y-2 rounded-lg border-2 border-slate-100 p-1 md:p-2 lg:col-span-2">
           {cartItems.map((item) => (
-            <div key={item.id} className="flex justify-between p-4">
+            <div
+              key={item.id}
+              className="flex flex-col justify-between gap-y-4 p-4 lg:flex-row"
+            >
               <div className="flex">
                 <div className="flex items-center justify-center p-6">
                   <img
@@ -58,8 +61,8 @@ const Cart: React.FC<Props> = ({
                 </div>
                 <div className="flex w-3/4 flex-col text-lg">
                   <div className="font-satoshiBold">{item.title}</div>
-                  <div className="text-sm">{item.description}</div>
-                  <div className="mt-auto font-satoshiBold text-xl font-bold">
+                  <div className="text-xs sm:text-sm">{item.description}</div>
+                  <div className="mt-auto font-satoshiBold font-bold sm:text-xl">
                     $
                     {hasDecimal(item.price)
                       ? item.price.toFixed(2)
@@ -67,11 +70,11 @@ const Cart: React.FC<Props> = ({
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col items-end">
+              <div className="flex items-center justify-end gap-x-2 lg:flex-col lg:items-end">
                 <button onClick={() => handleRemoveCartItem(item.id)}>
                   <IconTrashXFilled className="text-red-500" />
                 </button>
-                <div className="mt-auto flex items-center justify-between rounded-full bg-gray-100 px-2 py-2 font-satoshiBold">
+                <div className="mt-auto flex items-center justify-between rounded-full bg-gray-100 font-satoshiBold md:px-2 md:py-2">
                   <button
                     className="px-3"
                     onClick={() => decreaseQuantity(item.id)}
@@ -91,7 +94,7 @@ const Cart: React.FC<Props> = ({
             </div>
           ))}
         </div>
-        <div className="col-span-1">
+        <div className="lg:col-span-1">
           <div className="flex flex-col rounded-lg border-2 border-slate-100 p-4">
             <div className="font-satoshiBold text-lg">Order Summary</div>
             <div className="mt-4 flex items-center justify-between text-sm">

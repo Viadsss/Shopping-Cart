@@ -13,8 +13,8 @@ const Category: React.FC<Props> = ({ category }) => {
   };
 
   return (
-    <div className="w-60 border-r border-gray-200 px-2 py-8 pr-4 leading-5">
-      <div className="sticky top-20">
+    <div className="w-60 border-r border-gray-200 px-2 py-8 pr-2 leading-5 md:pr-4">
+      <div className="sticky top-20 block">
         <div className="mb-4 font-satoshiBold text-xl">Categories</div>
         {category && category !== "search" && (
           <button

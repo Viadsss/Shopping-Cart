@@ -39,7 +39,7 @@ const SearchProducts: React.FC<Props> = ({
         {searchValue} ({filteredProducts.length})
       </div>
       {filteredProducts.length !== 0 ? (
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {filteredProducts.map((product) => (
             <Link
               className="flex flex-col gap-y-2 rounded-lg p-3 hover:shadow-xl"

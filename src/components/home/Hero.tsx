@@ -5,36 +5,36 @@ import twinkleBig from "/imgs/TwinkleBig.png";
 
 const Hero = () => {
   return (
-    <div className="flex bg-[#F2F0F1] px-16">
-      <div className="basis-1/2 self-center">
-        <h2 className="font-integral text-6xl tracking-wide">
+    <div className="flex flex-col items-center bg-[#F2F0F1] px-4 pt-8 lg:flex-row lg:px-16">
+      <div className="basis-7/12 self-center">
+        <h2 className="text-balance text-center font-integral text-4xl tracking-wide md:text-5xl lg:text-left lg:text-6xl">
           Find Prodcuts That Matches Your Style
         </h2>
-        <p className="mb-6 mt-10 opacity-70">
+        <p className="mb-6 mt-10 text-center opacity-70 lg:text-left">
           Browse through our diverse range of meticulously crafted garments,
           designed to bring out your individuality and cater to your sense of
           style.
         </p>
-        <div className="mb-6 inline-block rounded-full bg-black px-10 py-3 text-white">
+        <div className="mx-20 mb-6 flex items-center justify-center rounded-full bg-black px-10 py-3 text-white lg:mx-0 lg:inline-block">
           <Link to="/shop">Shop Now</Link>
         </div>
-        <div className="flex items-center divide-x-2 divide-gray-300">
+        <div className="flex items-center justify-center divide-x-2 divide-gray-300 lg:justify-start">
           <div className="pr-8">
-            <div className="font-satoshiBold text-3xl">200+</div>
-            <div className="opacity-70">International Brands</div>
+            <div className="font-satoshiBold text-2xl lg:text-3xl">200+</div>
+            <div className="text-sm opacity-70">International Brands</div>
           </div>
           <div className="px-8">
-            <div className="font-satoshiBold text-3xl">2,000+</div>
-            <div className="opacity-70">High-Quality Products</div>
+            <div className="font-satoshiBold text-2xl lg:text-3xl">2,000+</div>
+            <div className="text-sm opacity-70">High-Quality Products</div>
           </div>
           <div className="pl-8">
-            <div className="font-satoshiBold text-3xl">30,000+</div>
-            <div className="opacity-70">Happy Customers</div>
+            <div className="font-satoshiBold text-2xl lg:text-3xl">30,000+</div>
+            <div className="text-sm opacity-70">Happy Customers</div>
           </div>
         </div>
       </div>
-      <div className="relative basis-1/2">
-        <img src={twinkleSmall} className="absolute top-1/2" />
+      <div className="relative basis-auto">
+        <img src={twinkleSmall} className="absolute top-1/2 w-7 lg:w-14" />
         <img src={twinkleBig} className="absolute right-0 top-1/4" />
         <img src={heroModel} />
       </div>

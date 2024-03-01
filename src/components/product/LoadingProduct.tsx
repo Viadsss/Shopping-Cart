@@ -1,6 +1,6 @@
 import LoadingSvg from "/Loading.svg";
 
-const LoadingCategory = () => {
+const LoadingProduct = () => {
   return (
     <div className="flex h-full min-h-screen items-baseline justify-center">
       <img src={LoadingSvg} />
@@ -8,4 +8,4 @@ const LoadingCategory = () => {
   );
 };
 
-export default LoadingCategory;
+export default LoadingProduct;

@@ -9,12 +9,12 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <div className="flex w-full flex-col items-center bg-black">
-      <div className="flex w-full max-w-screen-2xl justify-between px-24 pb-8 pt-16">
+      <div className="flex w-full max-w-screen-2xl flex-col justify-between gap-y-8 px-8 pb-8 pt-16 md:flex-row md:px-24">
         <div className="flex flex-col gap-y-8 text-white">
           <div className="font-integral text-4xl uppercase">
             <Link to="/">Shop.Co</Link>
           </div>
-          <p className="w-1/2 self-start text-sm">
+          <p className="w-full self-start text-sm md:w-1/2">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas,
             quisquam molestiae? Dignissimos, excepturi ipsum ipsam architecto
             alias vero voluptatem asperiores necessitatibus autem at voluptates
@@ -85,7 +85,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="flex w-full flex-col items-center border-t border-gray-800 text-white">
-        <div className="flex w-full max-w-screen-2xl justify-between px-24 py-5">
+        <div className="flex w-full max-w-screen-2xl justify-between px-8 md:px-24 py-5">
           <div className="text-sm text-gray-400">
             Shop.co © 2000-2024. All Rigths Reserved
           </div>
