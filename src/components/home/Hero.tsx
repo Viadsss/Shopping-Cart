@@ -15,19 +15,22 @@ const Hero = () => {
           designed to bring out your individuality and cater to your sense of
           style.
         </p>
-        <div className="mx-20 mb-6 flex items-center justify-center rounded-full bg-black px-10 py-3 text-white lg:mx-0 lg:inline-block">
-          <Link to="/shop">Shop Now</Link>
-        </div>
-        <div className="flex items-center justify-center divide-x-2 divide-gray-300 lg:justify-start">
-          <div className="pr-8">
+        <Link
+          to="/shop"
+          className="mx-20 mb-6 flex items-center justify-center rounded-full bg-black px-10 py-3 text-center text-white lg:mx-0 lg:inline-block"
+        >
+          Shop Now
+        </Link>
+        <div className="flex justify-center divide-x-2 divide-gray-300 lg:justify-start">
+          <div className="pr-2 md:pr-8">
             <div className="font-satoshiBold text-2xl lg:text-3xl">200+</div>
             <div className="text-sm opacity-70">International Brands</div>
           </div>
-          <div className="px-8">
+          <div className="px-2 md:px-8">
             <div className="font-satoshiBold text-2xl lg:text-3xl">2,000+</div>
             <div className="text-sm opacity-70">High-Quality Products</div>
           </div>
-          <div className="pl-8">
+          <div className="pl-2 md:pl-8">
             <div className="font-satoshiBold text-2xl lg:text-3xl">30,000+</div>
             <div className="text-sm opacity-70">Happy Customers</div>
           </div>
